@@ -1,0 +1,36 @@
+:host {
+  .wc-tab-header {
+    padding: .5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--wc-tab-header-bg-color, transparent);
+    color: var(--wc-tab-header-color, #007bff);
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    margin-bottom: -1px;
+  }
+
+  @media (max-width: 599px) {
+    .wc-tab-header {
+      min-width: 100px;
+    }
+  }
+
+  .wc-tab-header-selected {
+    color: var(--wc-tab-header-selected-color, #495057);
+    background-color: var(--wc-tab-header-selected-bg-color, #fff);
+    border-color: var(--wc-tab-header-selected-border-color, #dee2e6) var(--wc-tab-header-selected-border-color, #dee2e6) var(--wc-tab-header-selected-bg-color, #fff);
+  }
+
+  .wc-tab-header-disabled {
+    pointer-events: none;
+    cursor: default;
+    color: var(--wc-tab-header-disabled-color, #6c757d);
+    background-color: var(--wc-tab-header-disabled-bg-color, transparent);
+    border-color: transparent;
+  }
+}

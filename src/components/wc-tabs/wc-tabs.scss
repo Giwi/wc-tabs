@@ -1,0 +1,10 @@
+:host {
+  .wc-tabs-header {
+    display: flex;
+    border-bottom: 1px solid var(--wc-tab-header-border-color, #dee2e6);
+  }
+
+  .wc-tabs-content {
+    padding: 10px
+  }
+}
