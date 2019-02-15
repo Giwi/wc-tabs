@@ -5,7 +5,7 @@ import {IWcTabContentData} from "../../utils/model";
 @Component({
   tag: 'wc-tabs-content',
   styleUrl: 'wc-tabs-content.scss',
-  shadow: true
+  shadow: false
 })
 export class StcTabContent {
 

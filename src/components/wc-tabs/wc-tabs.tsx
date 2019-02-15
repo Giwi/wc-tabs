@@ -12,7 +12,7 @@ interface ITabGroup {
 @Component({
   tag: 'wc-tabs',
   styleUrl: 'wc-tabs.scss',
-  shadow: true
+  shadow: false
 })
 export class WCTabs {
   tabsHeader: IWcTabHeaderData[];

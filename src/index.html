@@ -5,18 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>WCTabs</title>
   <script src="/build/wc-tabs.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
 
+    .container {
+      margin: 15px auto;
+    }
+
+    .full {
+      display: block;
+      height: 100%;
+    }
+  </style>
 </head>
-<body>
-<wc-tabs>
-  <wc-tabs-header slot="header" name="tab1">Tab 1</wc-tabs-header>
-  <wc-tabs-header slot="header" name="tab2">Tab 2</wc-tabs-header>
-  <wc-tabs-header slot="header" name="tab3" disabled="true">Tab 3</wc-tabs-header>
 
-  <wc-tabs-content slot="content" name="tab1">Content tab 1</wc-tabs-content>
-  <wc-tabs-content slot="content" name="tab2">Content tab 2</wc-tabs-content>
-  <wc-tabs-content slot="content" name="tab3">Content tab 3</wc-tabs-content>
-</wc-tabs>
+<body class="d-flex flex-column vh-100 align-items-stretch">
+
+<main role="main" class="container flex-fill bg-light">
+
+
+  <wc-tabs>
+    <wc-tabs-header slot="header" name="tab1">Tab 1</wc-tabs-header>
+    <wc-tabs-header slot="header" name="tab2">Tab 2</wc-tabs-header>
+    <wc-tabs-header slot="header" name="tab3" disabled="true">Tab 3</wc-tabs-header>
+
+    <wc-tabs-content slot="content" name="tab1">
+      <div class="bg-dark full">Content tab 1</div>
+    </wc-tabs-content>
+    <wc-tabs-content slot="content" name="tab2">Content tab 2</wc-tabs-content>
+    <wc-tabs-content slot="content" name="tab3">Content tab 3</wc-tabs-content>
+  </wc-tabs>
+
+</main>
 
 </body>
 </html>
