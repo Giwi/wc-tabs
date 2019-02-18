@@ -1,10 +1,14 @@
-wc-tabs {
+:host {
   height: 100%;
   width: 100%;
-
-  .wc-tabs-header {
+  .wc-tabs-headers-wrapper {
     display: flex;
-    border-bottom: 1px solid var(--wc-tab-header-border-color, #dee2e6);
+
+    .wc-tabs-header {
+      border-bottom: 1px solid var(--wc-tab-header-border-color, #dee2e6);
+      display: flex;
+
+    }
   }
 
   .wc-tabs-content {
