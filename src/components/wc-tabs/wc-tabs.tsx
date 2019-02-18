@@ -31,9 +31,11 @@ export class WCTabs {
 
   @Listen('onSelect')
   onSelectedTab(event: CustomEvent) {
-    const group = this.tabGroup.find(group => group.header.id === event.detail.id);
-    console.debug(group, event.detail)
-    this.selectGroup(group);
+    if(this.tabGroup) {
+      const group = this.tabGroup.find(group => group.header.id === event.detail.id);
+      console.debug(group, event.detail)
+      this.selectGroup(group);
+    }
   }
 
   /**
