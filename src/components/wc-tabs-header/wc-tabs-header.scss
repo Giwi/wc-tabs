@@ -8,9 +8,9 @@
     background-color: var(--wc-tab-header-bg-color, transparent);
     color: var(--wc-tab-header-color, #007bff);
     text-decoration: none;
-    border: 1px solid transparent;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
+    border-color: 1px solid  var(--wc-tab-header-border-color, #dee2e6) var(--wc-tab-header-border-color, #dee2e6) transparent;
     margin-bottom: -1px;
   }
 
@@ -31,6 +31,6 @@
     cursor: default;
     color: var(--wc-tab-header-disabled-color, #6c757d);
     background-color: var(--wc-tab-header-disabled-bg-color, transparent);
-    border-color: transparent;
+    border-color: var(--wc-tab-header-disabled-border-color, #dee2e6) var(--wc-tab-header-disabled-border-color, #dee2e6) var(--wc-tab-header-disabled-bg-color, #fff);
   }
 }
