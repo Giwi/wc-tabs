@@ -1,13 +1,24 @@
 :host {
   height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
   width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+
   .wc-tabs-headers-wrapper {
     display: flex;
 
     .wc-tabs-header {
       border-bottom: 1px solid var(--wc-tab-header-border-color, #dee2e6);
       display: flex;
-
     }
   }
 
@@ -15,6 +26,8 @@
     height: 100%;
     width: 100%;
     display: block;
-    padding: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
   }
 }

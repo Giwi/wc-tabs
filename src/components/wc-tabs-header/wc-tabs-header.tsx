@@ -63,10 +63,8 @@ export class StcTabHeader {
     };
 
     // noinspection JSXNamespaceValidation
-    return [
-      <div class={classes} onClick={this.onClick.bind(this)}>
-        <slot/>
-      </div>,
-    ];
+    return <div class={classes} onClick={this.onClick.bind(this)}>
+      <slot/>
+    </div>;
   }
 }
