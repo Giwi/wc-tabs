@@ -15,6 +15,8 @@ Simple tabs component
 </wc-tabs>
 ```
 
+## Properties
+
 `selection` property is not mandatory. Default selection is the first tab (0).
 
 `selection` can be changed externaly anytime to force tab selection.
