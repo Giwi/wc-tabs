@@ -1,6 +1,6 @@
-import {Component, Element, Listen} from "@stencil/core";
-import {IWcTabContentData, IWcTabHeaderData} from "../../utils/model";
-import {Components} from "../../components";
+import { Component, Element, Listen, Prop, Watch } from "@stencil/core";
+import { IWcTabContentData, IWcTabHeaderData } from "../../utils/model";
+import { Components } from "../../components";
 import WcTabsHeader = Components.WcTabsHeader;
 import WcTabsContent = Components.WcTabsContent;
 
@@ -20,12 +20,30 @@ export class WCTabs {
   tabGroup: ITabGroup[];
 
   @Element() host: HTMLElement;
+  @Prop() selection: number = -1;
+  selectedIndice = -1;
 
+  @Watch('selection')
+  onExternalSelection(newValue: number, _oldValue: number) {
+    if (newValue != this.selectedIndice) {
+      this.selectGroupFromIndice(newValue);
+      this.selectedIndice = newValue;
+    }
+  }
+
+  selectGroupFromIndice(i: number) {
+    this.selectGroup(this.tabGroup[i % this.tabGroup.length]);
+  }
   // noinspection JSUnusedGlobalSymbols
   componentDidLoad() {
     this.createGroup().then(() => {
-      const [group] = this.tabGroup;
-      this.selectGroup(group);
+      if (this.selection >= 0) {
+        this.selectGroupFromIndice(this.selection);
+      } else {
+        const [group] = this.tabGroup;
+        console.log(this.tabGroup)
+        this.selectGroup(group);        
+      }
     });
   }
 
@@ -89,11 +107,11 @@ export class WCTabs {
     return [
       <div class="wc-tabs-headers-wrapper">
         <div class="wc-tabs-header">
-          <slot name="header"/>
+          <slot name="header" />
         </div>
       </div>,
       <div class="wc-tabs-content">
-        <slot name="content"/>
+        <slot name="content" />
       </div>
     ];
   }

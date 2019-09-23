@@ -35,8 +35,12 @@ export namespace Components {
     'onOnSelect'?: (event: CustomEvent) => void;
   }
 
-  interface WcTabs {}
-  interface WcTabsAttributes extends StencilHTMLAttributes {}
+  interface WcTabs {
+    'selection': number;
+  }
+  interface WcTabsAttributes extends StencilHTMLAttributes {
+    'selection'?: number;
+  }
 }
 
 declare global {
