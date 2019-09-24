@@ -10,6 +10,7 @@ import {IWcTabContentData} from "../../utils/model";
 export class StcTabContent {
 
   @Prop() name: string;
+  @Prop() responsive: boolean = false;
 
   @State() isSelected: boolean = false;
 
@@ -43,7 +44,8 @@ export class StcTabContent {
   render() {
     const classes = {
       'wc-tab-content': true,
-      'wc-tab-content-selected': this.isSelected
+      'wc-tab-content-selected': this.isSelected,
+      'wc-tab-content-responsive':this.responsive
     };
 
     return (

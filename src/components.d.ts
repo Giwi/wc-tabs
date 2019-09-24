@@ -19,9 +19,11 @@ export namespace Components {
   interface WcTabsContent {
     'getChild': () => Promise<IWcTabContentData>;
     'name': string;
+    'responsive': boolean;
   }
   interface WcTabsContentAttributes extends StencilHTMLAttributes {
     'name'?: string;
+    'responsive'?: boolean;
   }
 
   interface WcTabsHeader {

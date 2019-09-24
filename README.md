@@ -10,7 +10,7 @@ Simple tabs component
   <wc-tabs-header slot="header" name="tab3" disabled="true">Tab 3</wc-tabs-header>
 
   <wc-tabs-content slot="content" name="tab1">Content tab 1</wc-tabs-content>
-  <wc-tabs-content slot="content" name="tab2">Content tab 2</wc-tabs-content>
+  <wc-tabs-content slot="content" name="tab2" responsive="true">Content tab 2</wc-tabs-content>
   <wc-tabs-content slot="content" name="tab3">Content tab 3</wc-tabs-content>
 </wc-tabs>
 ```
@@ -40,11 +40,10 @@ Simple tabs component
 ## wc-tabs-content
 
 ### Properties
-
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
-
+| Property     | Attribute    | Description | Type      | Default     |
+| ------------ | ------------ | ----------- | --------- | ----------- |
+| `name`       | `name`       |             | `string`  | `undefined` |
+| `responsive` | `responsive` |  when set, force the div dimensions to 100%           | `boolean` | `false`     |
 
 ### Methods
 
