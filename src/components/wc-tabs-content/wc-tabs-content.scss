@@ -8,4 +8,9 @@ wc-tabs-content {
   .wc-tab-content-selected {
     display: block;
   }
+
+  .wc-tab-content-responsive {
+    height: 100%;
+    width: 100%;
+  }
 }

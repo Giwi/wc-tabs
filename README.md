@@ -4,16 +4,25 @@
 Simple tabs component
 
 ```html
-<wc-tabs>
+<wc-tabs selection="1">
   <wc-tabs-header slot="header" name="tab1">Tab 1</wc-tabs-header>
   <wc-tabs-header slot="header" name="tab2">Tab 2</wc-tabs-header>
   <wc-tabs-header slot="header" name="tab3" disabled="true">Tab 3</wc-tabs-header>
 
   <wc-tabs-content slot="content" name="tab1">Content tab 1</wc-tabs-content>
-  <wc-tabs-content slot="content" name="tab2">Content tab 2</wc-tabs-content>
+  <wc-tabs-content slot="content" name="tab2" responsive="true">Content tab 2</wc-tabs-content>
   <wc-tabs-content slot="content" name="tab3">Content tab 3</wc-tabs-content>
 </wc-tabs>
 ```
+
+## Properties
+
+`selection` property is not mandatory. Default selection is the first tab (0).
+
+`selection` can be changed externaly anytime to force tab selection.
+
+`selection` is applied modulus the number of tab.
+
 
 ## CSS vars
 
@@ -31,11 +40,10 @@ Simple tabs component
 ## wc-tabs-content
 
 ### Properties
-
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `name`   | `name`    |             | `string` | `undefined` |
-
+| Property     | Attribute    | Description | Type      | Default     |
+| ------------ | ------------ | ----------- | --------- | ----------- |
+| `name`       | `name`       |             | `string`  | `undefined` |
+| `responsive` | `responsive` |  when set, force the div dimensions to 100%           | `boolean` | `false`     |
 
 ### Methods
 
