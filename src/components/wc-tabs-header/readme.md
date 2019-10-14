@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event      | Description | Type                |
-| ---------- | ----------- | ------------------- |
-| `onSelect` |             | `CustomEvent<void>` |
+| Event      | Description | Type               |
+| ---------- | ----------- | ------------------ |
+| `onSelect` |             | `CustomEvent<any>` |
 
 
 ## Methods
