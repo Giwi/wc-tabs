@@ -61,14 +61,14 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface WcTabs {
+  interface WcTabs extends JSXBase.HTMLAttributes<HTMLWcTabsElement> {
     'selection'?: number;
   }
-  interface WcTabsContent {
+  interface WcTabsContent extends JSXBase.HTMLAttributes<HTMLWcTabsContentElement> {
     'name'?: string;
     'responsive'?: boolean;
   }
-  interface WcTabsHeader {
+  interface WcTabsHeader extends JSXBase.HTMLAttributes<HTMLWcTabsHeaderElement> {
     'disabled'?: boolean;
     'name'?: string;
     'onOnSelect'?: (event: CustomEvent<any>) => void;
@@ -86,11 +86,7 @@ export { LocalJSX as JSX };
 
 declare module "@stencil/core" {
   export namespace JSX {
-    interface IntrinsicElements {
-      'wc-tabs': LocalJSX.WcTabs & JSXBase.HTMLAttributes<HTMLWcTabsElement>;
-      'wc-tabs-content': LocalJSX.WcTabsContent & JSXBase.HTMLAttributes<HTMLWcTabsContentElement>;
-      'wc-tabs-header': LocalJSX.WcTabsHeader & JSXBase.HTMLAttributes<HTMLWcTabsHeaderElement>;
-    }
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
 }
 
