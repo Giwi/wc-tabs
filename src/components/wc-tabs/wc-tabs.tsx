@@ -1,4 +1,4 @@
-import { Component, Element, Listen, Prop, Watch } from "@stencil/core";
+import { Component, Element, Listen, Prop, Watch, h } from "@stencil/core";
 import { IWcTabContentData, IWcTabHeaderData } from "../../utils/model";
 import { Components } from "../../components";
 import WcTabsHeader = Components.WcTabsHeader;

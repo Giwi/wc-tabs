@@ -1,7 +1,8 @@
 {
   "name": "@giwisoft/wc-tabs",
-  "version": "0.0.10",
+  "version": "1.0.1",
   "description": "Tabs component",
+  "unpkg": "dist/wc-tabs/wc-tabs.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Giwi/wc-tabs.git"
@@ -15,23 +16,27 @@
     "web",
     "web components"
   ],
-  "module": "dist/esm/index.js",
   "main": "dist/index.js",
-  "types": "dist/types/components.d.ts",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
     "build": "stencil build --docs",
-    "dev": "stencil build --prod --watch --serve",
+    "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "prepublishOnly": "yarn build"
+    "generate": "stencil generate"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "^0.18.1",
-    "@stencil/sass": "^0.2.1"
+    "@stencil/core": "~1.7.1",
+    "@stencil/sass": "1.0.0"
   }
 }

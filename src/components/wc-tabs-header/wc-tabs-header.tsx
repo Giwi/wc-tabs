@@ -1,4 +1,4 @@
-import {Component, Prop, Method, Event, EventEmitter, State} from '@stencil/core';
+import {Component, Prop, Method, Event, EventEmitter, State, h} from '@stencil/core';
 import {IWcTabHeaderData} from "../../utils/model";
 import {Utils} from "../../utils/utils";
 

@@ -5,59 +5,42 @@
  */
 
 
-import '@stencil/core';
-
-
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   IWcTabContentData,
   IWcTabHeaderData,
 } from './utils/model';
 
-
 export namespace Components {
-
+  interface WcTabs {
+    'selection': number;
+  }
   interface WcTabsContent {
+    /**
+    * @returns
+    */
     'getChild': () => Promise<IWcTabContentData>;
     'name': string;
     'responsive': boolean;
   }
-  interface WcTabsContentAttributes extends StencilHTMLAttributes {
-    'name'?: string;
-    'responsive'?: boolean;
-  }
-
   interface WcTabsHeader {
     'disabled': boolean;
+    /**
+    * @returns
+    */
     'getChild': () => Promise<IWcTabHeaderData>;
     'name': string;
-  }
-  interface WcTabsHeaderAttributes extends StencilHTMLAttributes {
-    'disabled'?: boolean;
-    'name'?: string;
-    'onOnSelect'?: (event: CustomEvent) => void;
-  }
-
-  interface WcTabs {
-    'selection': number;
-  }
-  interface WcTabsAttributes extends StencilHTMLAttributes {
-    'selection'?: number;
   }
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'WcTabsContent': Components.WcTabsContent;
-    'WcTabsHeader': Components.WcTabsHeader;
-    'WcTabs': Components.WcTabs;
-  }
 
-  interface StencilIntrinsicElements {
-    'wc-tabs-content': Components.WcTabsContentAttributes;
-    'wc-tabs-header': Components.WcTabsHeaderAttributes;
-    'wc-tabs': Components.WcTabsAttributes;
-  }
 
+  interface HTMLWcTabsElement extends Components.WcTabs, HTMLStencilElement {}
+  var HTMLWcTabsElement: {
+    prototype: HTMLWcTabsElement;
+    new (): HTMLWcTabsElement;
+  };
 
   interface HTMLWcTabsContentElement extends Components.WcTabsContent, HTMLStencilElement {}
   var HTMLWcTabsContentElement: {
@@ -70,32 +53,45 @@ declare global {
     prototype: HTMLWcTabsHeaderElement;
     new (): HTMLWcTabsHeaderElement;
   };
-
-  interface HTMLWcTabsElement extends Components.WcTabs, HTMLStencilElement {}
-  var HTMLWcTabsElement: {
-    prototype: HTMLWcTabsElement;
-    new (): HTMLWcTabsElement;
-  };
-
   interface HTMLElementTagNameMap {
-    'wc-tabs-content': HTMLWcTabsContentElement
-    'wc-tabs-header': HTMLWcTabsHeaderElement
-    'wc-tabs': HTMLWcTabsElement
-  }
-
-  interface ElementTagNameMap {
+    'wc-tabs': HTMLWcTabsElement;
     'wc-tabs-content': HTMLWcTabsContentElement;
     'wc-tabs-header': HTMLWcTabsHeaderElement;
-    'wc-tabs': HTMLWcTabsElement;
+  }
+}
+
+declare namespace LocalJSX {
+  interface WcTabs {
+    'selection'?: number;
+  }
+  interface WcTabsContent {
+    'name'?: string;
+    'responsive'?: boolean;
+  }
+  interface WcTabsHeader {
+    'disabled'?: boolean;
+    'name'?: string;
+    'onOnSelect'?: (event: CustomEvent<any>) => void;
   }
 
+  interface IntrinsicElements {
+    'wc-tabs': WcTabs;
+    'wc-tabs-content': WcTabsContent;
+    'wc-tabs-header': WcTabsHeader;
+  }
+}
 
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
   export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
+    interface IntrinsicElements {
+      'wc-tabs': LocalJSX.WcTabs & JSXBase.HTMLAttributes<HTMLWcTabsElement>;
+      'wc-tabs-content': LocalJSX.WcTabsContent & JSXBase.HTMLAttributes<HTMLWcTabsContentElement>;
+      'wc-tabs-header': LocalJSX.WcTabsHeader & JSXBase.HTMLAttributes<HTMLWcTabsHeaderElement>;
     }
   }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+
