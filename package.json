@@ -1,6 +1,6 @@
 {
   "name": "@giwisoft/wc-tabs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tabs component",
   "unpkg": "dist/wc-tabs/wc-tabs.js",
   "repository": {
@@ -28,6 +28,7 @@
     "loader/"
   ],
   "scripts": {
+    "prepublishOnly": "npm run build --prod",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
@@ -36,7 +37,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "~1.7.1",
+    "@stencil/core": "1.3.2",
     "@stencil/sass": "1.0.0"
   }
 }
