@@ -41,8 +41,7 @@ export class WCTabs {
         this.selectGroupFromIndice(this.selection);
       } else {
         const [group] = this.tabGroup;
-        console.log(this.tabGroup)
-        this.selectGroup(group);        
+        this.selectGroup(group);
       }
     });
   }
@@ -51,7 +50,6 @@ export class WCTabs {
   onSelectedTab(event: CustomEvent) {
     if (this.tabGroup) {
       const group = this.tabGroup.find(group => group.header.id === event.detail.id);
-      console.debug(group, event.detail)
       this.selectGroup(group);
     }
   }
@@ -75,9 +73,7 @@ export class WCTabs {
         Promise.all(contents).then(rc => {
           rc.map(c => this.tabsContent.push(c));
           this.tabGroup = this.tabsHeader.map(header => {
-            console.log('header', header);
             const content = this.tabsContent.find(content => content.name === header.name);
-            console.log('content', content);
             return {
               header: header,
               content: content
