@@ -14,18 +14,14 @@ export class StcTabHeader {
   @Prop() name: string;
   @Prop() disabled: boolean;
 
-  @Event() onSelect: EventEmitter;
+  @Event() select: EventEmitter;
 
   @State() isSelected: boolean = false;
 
-  /**
-   *
-   * @returns {Promise<IWcTabHeaderData>}
-   */
   @Method()
   async getChild(): Promise<IWcTabHeaderData> {
     return new Promise<IWcTabHeaderData>(resolve => resolve({
-      select: this.select.bind(this),
+      select: this.handleSelect.bind(this),
       unselect: this.unselect.bind(this),
       name: this.name,
       id: this.id
@@ -42,7 +38,7 @@ export class StcTabHeader {
   /**
    *
    */
-  select() {
+  handleSelect() {
     this.isSelected = true;
   }
 
@@ -51,7 +47,7 @@ export class StcTabHeader {
    */
   onClick() {
     if (!this.disabled) {
-      this.getChild().then(child => this.onSelect.emit(child));
+      this.getChild().then(child => this.select.emit(child));
     }
   }
 
