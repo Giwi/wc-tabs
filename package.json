@@ -1,6 +1,6 @@
 {
   "name": "@giwisoft/wc-tabs",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Tabs component",
   "unpkg": "dist/wc-tabs/wc-tabs.js",
   "repository": {
