@@ -20,9 +20,6 @@ export namespace Components {
     }
     interface WcTabsHeader {
         "disabled": boolean;
-        /**
-          * @returns
-         */
         "getChild": () => Promise<IWcTabHeaderData>;
         "name": string;
     }
@@ -63,7 +60,7 @@ declare namespace LocalJSX {
     interface WcTabsHeader {
         "disabled"?: boolean;
         "name"?: string;
-        "onOnSelect"?: (event: CustomEvent<any>) => void;
+        "onSelect"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "wc-tabs": WcTabs;
