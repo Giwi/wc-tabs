@@ -14,7 +14,7 @@ export class StcTabHeader {
   @Prop() name: string;
   @Prop() disabled: boolean;
 
-  @Event() select: EventEmitter;
+  @Event() tabSelect: EventEmitter;
 
   @State() isSelected: boolean = false;
 
@@ -47,7 +47,7 @@ export class StcTabHeader {
    */
   onClick() {
     if (!this.disabled) {
-      this.getChild().then(child => this.select.emit(child));
+      this.getChild().then(child => this.tabSelect.emit(child));
     }
   }
 

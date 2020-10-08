@@ -46,7 +46,7 @@ export class WCTabs {
     });
   }
 
-  @Listen('select')
+  @Listen('tabSelect')
   onSelectedTab(event: CustomEvent) {
     if (this.tabGroup) {
       const group = this.tabGroup.find(group => group.header.id === event.detail.id);
