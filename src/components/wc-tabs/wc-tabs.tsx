@@ -46,7 +46,7 @@ export class WCTabs {
     });
   }
 
-  @Listen('onSelect')
+  @Listen('select')
   onSelectedTab(event: CustomEvent) {
     if (this.tabGroup) {
       const group = this.tabGroup.find(group => group.header.id === event.detail.id);
@@ -54,10 +54,6 @@ export class WCTabs {
     }
   }
 
-  /**
-   *
-   * @returns {Promise<void>}
-   */
   createGroup(): Promise<void> {
     return new Promise<void>(resolve => {
       this.tabsHeader = [];
@@ -85,10 +81,6 @@ export class WCTabs {
     });
   }
 
-  /**
-   *
-   * @param {ITabGroup} group
-   */
   selectGroup(group: ITabGroup) {
     this.tabGroup.forEach(t => {
       t.header.unselect();
@@ -102,7 +94,7 @@ export class WCTabs {
     // noinspection JSXNamespaceValidation
     return [
       <div class="wc-tabs-headers-wrapper">
-        <div class="wc-tabs-header">
+        <div class="wc-tabs-header" >
           <slot name="header" />
         </div>
       </div>,
